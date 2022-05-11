@@ -1,0 +1,636 @@
+/* 
+1.-Poscionamiento
+2.-modelo de caja (box-model)
+3.-tipografia (tamaños fuentes)
+4.-Visules(border,shadow,hover).
+5.-otros
+ */
+
+ :root {
+     /* colores */
+     --bitcoin-orange:#F7931A;
+     --soft-orange:#FFE9D4;
+     --secondary-blue:#1A9AF7;
+     --soft-blue:#E7F5FF;
+     --warm-black:#201E1C;
+     --warm-black1: #282623;
+     --grey:#BABABA;
+     --off-white: #FAF8F7;
+     --just-white:#FFFFFF;
+
+
+
+ }
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* font-family: 'DM Sans', sans-serif;
+font-family: 'Inter', sans-serif; */
+
+header{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    height: 334px;
+    text-align: center;
+    background:  linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+   
+}
+
+header img{
+    width:  150px;
+    height: 24px;
+    margin-top: 30px;
+    /* margin-bottom: 60px; */
+    align-self: center;  /* Esta es la manera de centrar a un elemento en display flex */
+}
+
+.header--title-container{
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin-top: 50px;
+    height: 218px;
+    text-align: center;
+    align-self: center;
+   
+}
+
+.header--title-container h1{
+       font-size: 2.4rem;
+       font-weight: bold;  /* Es una letra en negritas */
+       line-height: 2.6rem;  /* Es la altura entre lineas */
+        margin-bottom: 2.4rem;
+        color: var(--just-white);
+
+}
+
+.header--title-container p{
+    width: 288px;
+    height: 36x;
+   
+    color: var(--soft-orange);
+    font-weight: 300;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    
+    
+
+}
+    .header--title-container .header--button{
+        position: absolute;
+        left: calc(50% - 114.5px);/* De esta manera lo ponemos al medio */
+        top: calc(100% - 24px);  /* De esta maenra lo ponemos sobre la linea */
+      
+      /*   top: 270px; */
+        display:block;
+        width: 22.9rem;
+        height: 4.8rem;
+        background: var(--off-white);
+        text-align: center;
+        padding: 1.5rem; 
+
+        /* sombras */
+        box-shadow: 0px 4px 8px rgba(89, 73, 30, 0, 0.16);
+        border: none;
+        border-radius: 5px;;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: var(--warm-black);
+
+
+
+    }
+
+    .header--button span{
+        display: inline-block; /* Le tenemosq ue dar un display por default trae inline */
+        width: 18px; /* anchos */
+        height: 13px; /* ALTO */
+        margin-left: 10px;
+        background-image: url(./assets/icons/Vector.png);
+    }
+
+    .main{
+        width: 100%;
+        height: auto;
+        background-color: var(--off-white);
+    }
+
+
+    .main-exchange-container{   /* Este es el elemento padre, el que alinea el texto interno */
+        width: 100%;
+        height:auto;
+        padding-top: 80px;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+
+    .main-exchange-container__title{
+        width: 90%;
+        min-width: 288px;
+        max-width: 900px;
+        margin: 0 auto; /* no dara margen pero siempre se mntendra al centro */
+    }
+/* 
+
+    .main-exchange-container__title{
+        
+        width: 288px;
+        min-width: 250px;
+        height: 52px;
+
+        left: calc(50% - 288px/2);
+        top: calc(50% - 52px/2);
+
+        align-items: center;
+        align-self: center;
+
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.4rem;
+
+
+    } */
+
+    .main-exchange-container .backgroundImg{
+        width: 200px;
+        height: 200px;
+        margin: 0 auto; /* Tenemos que hacer que la imagen se posicione ene el centro */
+        margin-bottom: 50px; /* Le agregmos 50 px abajo para que la imagen se separe del texto */
+        background-image: url(./assets/icons/bitcoin.svg);
+        background-size: cover;
+    
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .main-exchange-container h2{
+        margin-bottom: 30px;
+        font-size: 2.4rem;
+        font-weight: bold;
+        line-height: 2.6rem;
+        color: var(--warm-black);
+    }
+
+    .main-exchange-container p {
+        margin-bottom: 30px;
+        font-size: 1.4rem;
+        font-weight: 500px;
+        line-height: 1.6rem;
+        color: #757575;  /* Este color no se guardo el variable ya que solo s eusara una vez */
+    }
+
+
+.main-currency-table{
+    width: 70%;
+    min-width: 235px;
+    max-width: 500px;
+    height: 360px;
+    margin:0 auto; /* no le va a gregar un margin arriba y abajo, y lo centrarar a los lados */
+    font-family: "Inter";
+}
+
+.main-currency-table .main-currency-table{  /* Contenedor del titulo */
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 2.3rem;
+    color: var(--bitcoin-orange);
+
+}
+
+.main-currency-table .currency-table__container{
+    width: 90%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+.currency-table__container table{
+    width: 100%;
+    height: 100%;
+}
+.currency-table__container td{
+    width: 50%;  /* Se le da el 50% para que los elementos internos se separen */
+                /* Cada dato ocupa el 50% de la fila */
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.9rem;
+    color: var(--grey)  ;
+    background-color: var(--soft-blue);     
+}
+
+.currency-table__container .table-top--left{
+    border-radius: 15px 0 0 0;
+    background-color: var(--secondary-blue);
+}
+
+.currency-table__container .table-top--right{
+    border-radius: 0 15px 0 0;
+    background-color: var(--secondary-blue);
+}
+
+.currency-table__container .table-bottom__left{
+    border-radius: 0 0 0 15px;
+    background-color: var(--secondary-blue);
+}
+
+.currency-table__container .table-bottom__right{
+    border-radius: 0 0 15px 0;
+    background-color: var(--secondary-blue);
+}
+
+.currency-date{
+    width: 190px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 0.8rem;
+    font-size: 8px;
+    background-color: var(--soft-orange);
+    border-radius: 8px;
+
+}
+
+.currency-date p{
+    margin: 7px;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    font-weight: 300;
+    color: var(--warm-black);
+
+}
+
+.main-product-detail{
+    position: relative;   /* Este es el limited de el position absolute de la patata */
+    width: 100%;
+    min-width: 320px;
+    max-width: 900x;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--warm-black);
+}
+
+/* .main-product-detail span{
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 24px;
+
+} */
+
+.main-product-detail .patata-logo{
+    position: absolute;
+    left: calc(50% - 37.5px/2);
+    top: calc(0% - 24.01px/2);
+
+    width: 40px;
+    height: 20px;
+
+
+
+   /*  background-image: url(./assets/icons/patata-logo.svg); */
+}
+
+
+.product-detail__title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+
+
+}
+.product-detail__title h2{
+    
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+
+    color: var(--off-white)
+}
+
+.product-detail__title p{
+    width: 288px;
+    height: 18px;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: #808080;
+    margin-bottom: 50px;
+
+}
+.product-detail__card{
+    width: 90%;
+    min-width: 288px;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--warm-black1);
+    border-radius: 5px;
+   /*  box-shadow: ; */
+
+}
+
+.product-detail__card .icon-card{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.product-detail__card .clock{
+    background-image: url(./assets/icons/clock1.svg);
+}
+
+.product-detail__card .eye{
+    background-image: url(./assets/icons/eye1.svg);
+}
+
+.product-detail__card .dolar{
+    background-image: url(./assets/icons/dollar1.svg);
+}
+
+.product-detail__card .circle{
+    background-image: url(./assets/icons/check-circle1.svg);
+}
+
+.product-detail__card .card__title{
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--just-white);
+
+
+}
+
+.product-detail__card .card__boddy{
+    font-size: 1.4rem;
+    font-weight:500;
+    line-height: 18px;
+    color: #808080;
+    text-align: left;
+
+}
+
+.bitcoin-baby-container{
+    position: relative;
+    width: 100%;
+    height: 0 auto;
+}
+
+.bitcoin-baby-container .background-image{
+    display: inline-block;
+    width: 100%;
+   /*  max-width: 900px; */
+    height:347px;
+    margin: 0 auto;
+    background-image: url(./assets/imgs/bitcoinbaby\ 1.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bitcoin-baby-container .bitcoin-baby__title{
+    position: absolute;
+    width: 30rem;
+    height: 3rem;
+    left: calc(50% - 30rem/2);
+    top: calc(0% + 20%);
+    text-align: center;
+
+}
+
+.bitcoin-baby__title h2{
+    font-size: 2.4rem;
+    font-weight:bold;
+    line-height: 18px;
+    color: var(--off-white);
+    
+}
+
+.plans-container-slider{
+    display: flex;
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;  /* Que no se quede en el medio en lateral, que pase al sigueinte elemento */
+
+}
+
+.main-plans-container{
+    width: 100%;
+    min-width: 320px;
+    padding-bottom: 70px; /* Darle 70px de altura al footer */
+    text-align: center; /* Alinear los elementos internos al centro */
+    background-color: var(--off-white);
+}
+
+.plans__title{
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+}
+
+.plants__tile h2{
+    
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height:2.6rem;
+    color: var(--warm-black);
+}
+
+.plans__title p{
+    padding-top: 15px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+    
+
+}
+
+.plans-container-card{
+    scroll-snap-align: center;
+    position: relative;
+    width: 70%;
+    min-width: 230px;
+    max-width: 930px;
+    height: 250px;
+    margin: 50px 20px ; /* 50 px arriva- al centro de los lados y 0 de abajo */
+    padding: 0 15px;
+    background-color: var(--just-white);
+
+    border-radius: 15px;
+    /* box-shadow: 0px 0px 10px  ; */
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.40); /* 0px hacia bjo, 4px a la izquierda, difminado de 8px y color rgba */
+
+
+}
+
+.plans-container-card .recomendado{
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    background-color: var(--bitcoin-orange);
+    color: var(--off-white);
+    left: calc(50% - 120px/2);
+    top: calc(0% - 15.5px);
+    border-radius: 8px;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.plan-card__title{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--warm-black);
+    padding-top: 30px;
+}
+
+.plan-card__price{
+    font-size: 5.2rem;
+    font-weight: bold;
+    line-height: 6.3rem;
+    margin-bottom: 16px;
+
+}
+
+.plan-card__price span{
+    font-size: 1.2rem;
+    font-weight:300;
+    vertical-align: text-top; /* Esto es para posicionar el span arriva */
+}
+
+.plan-card__saving{
+
+    width: 160px;
+    height: 30px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: #757575;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.plan-card__call-to-action{
+   /*  margin-top: 10px; */
+  
+    width: 141px;
+    height: 48px;
+    border: 2px solid #F7931A;
+    border-radius: 4px;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--warm-black1);
+    
+    background-color: var(--off-white);
+}
+
+.plan-card__call-to-action span{
+    display: inline-block;
+    width:20px;
+    height: 20px;
+    background-image: url(./assets/icons/arrow-right\ 1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    vertical-align: text-bottom;  /* Esto es para alinear el icono al texto */
+}
+
+.plans-container-card .basico{
+    background-color: #1A9AF7;
+}
+
+.plans-container-card .all-life{
+    background-color: var(--grey);
+    color: var(--warm-black);
+}
+
+ .main--ilimitado{
+    background-color: var(--warm-black);
+}
+.plan-card__price--ilimitado{
+    color: var(--just-white);
+}
+
+.plan-card__call-to-action--ilimitado{
+    background-color: var(--warm-black1);
+    color: var(--just-white);
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    min-width: 320px;
+    min-height: 150px;
+    background-color: var(--bitcoin-orange);
+   /*  padding: 10% 15%; */
+}
+
+footer section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+footer  .left ul{
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+.left li{
+    margin: 10px 0;    /* Aqui le damos altura a las letras, dandole margen a las li */
+}
+
+.left li a{
+    text-decoration: none;                  /* le quitamos la decoracion y agregamos color a las letras */
+    color: var(--just-white);
+}
+
+
+
